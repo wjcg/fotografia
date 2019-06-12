@@ -6,13 +6,21 @@
 
 body{
   /*problemas margin top*/
+  margin: 0;
   font-family: 'Dancing Script', arial;
   background-color: #02010a;
 }
 
+h1, h2, h3{
+  margin: 0;
+}
+
 #contenido{
-  width: 100%;
+  width: 95%;
+  padding: 10px 0 10px 0;
   margin: auto;
+  animation-name: carga_pagina;
+  animation-duration: 1s;
 }
 
 img{
@@ -45,7 +53,7 @@ header{
 
 #imagen1{
   width: 80%;
-  margin: 1%;
+  margin: 10px;
 }
 
 #imagenes_secundarias{
@@ -58,13 +66,14 @@ header{
 }
 
 .seccion{
+  padding-bottom: 10px;
   text-decoration: underline;
 }
 
 #imagen2, #imagen3{
   text-align: center;
   width: 80%;
-  margin: 2%;
+  margin: 10px;
   transition: transform 1s;
 }
 
@@ -86,7 +95,6 @@ header{
 }
 
 .galeria div{
-  margin: 2%;
   text-align: center;
 }
 
@@ -116,10 +124,10 @@ footer{
   background-color: #C6d5c5;
   display: flex;
   flex-flow: column;
+  padding-top: 10px;
 }
 
 footer section{
-  margin: 1%;
   flex-grow: 1;
 }
 
@@ -129,17 +137,17 @@ footer section{
     width: 900px;
     margin: auto;
   }
-  /*#contenido{
-    width: 900px;
-    text-align: center;
-  }*/
 
   #imagen1, #imagen2, #imagen3{
-    margin: auto;
+    margin: 2%;
   }
 
   #imagenes_secundarias{
     flex-flow: row;
+  }
+
+  .seccion{
+    padding-bottom: 2%;
   }
 
   .galeria{
@@ -147,15 +155,33 @@ footer section{
   }
 
   .galeria div{
+    margin: 2%;
     flex: 1 2 25%;
   }
 
 
   footer{
+    padding-top: 1%;
     flex-flow: row;
   }
 
-  footer section{
-    margin: auto;
+  footer select{
+    margin: 1%;
   }
+}
+
+@keyframes carga_pagina {
+  0%{
+    position: relative;
+    margin-top: 150%;
+  }
+  60%{
+    position: relative;
+    margin-top: -5%;
+  }
+  100%{
+    position: relative;
+    margin-top: 0%;
+  }
+
 }
