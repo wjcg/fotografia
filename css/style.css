@@ -5,11 +5,19 @@
 }*/
 
 body{
+  /*problemas margin top*/
   font-family: 'Dancing Script', arial;
   background-color: #02010a;
-
 }
 
+#contenido{
+  width: 100%;
+  margin: auto;
+}
+
+img{
+  box-shadow: 2px 2px #02010a;
+}
 
 header{
   color: white;
@@ -28,12 +36,6 @@ header{
   color: white;
 }
 
-/*
-article [id*="columna"]{
-  height: 200px;
-}
-*/
-
 #imagen_principal{
   text-align: center;
   background-color: #82c3a6;
@@ -41,16 +43,10 @@ article [id*="columna"]{
 }
 
 
-#columna1 img{
+#imagen1{
   width: 80%;
   margin: 1%;
 }
-
-/*#columna2, #columna3{
-  text-align: center;
-  background-color: #d5c75f;
-  border: 1px;
-}*/
 
 #imagenes_secundarias{
   text-align: center;
@@ -58,22 +54,68 @@ article [id*="columna"]{
   border: 1px;
   width: 100%;
   display: flex;
-  flex-direction: row wrap;
+  flex-flow: column;
 }
 
+.seccion{
+  text-decoration: underline;
+}
 
-#columna2 a img, #columna3 a img{
+#imagen2, #imagen3{
+  text-align: center;
   width: 80%;
-  margin: 1%;
+  margin: 2%;
+  transition: transform 1s;
 }
 
+
+#imagen2:hover{
+  box-shadow: 2px 2px #82c3a6;
+  transform: rotate(10deg);
+}
+
+#imagen3:hover{
+  box-shadow: 2px 2px #82c3a6;
+  transform: translate(20px, -5px);
+}
+
+.galeria{
+  background-color: #d5c75f;
+  display: flex;
+  flex-flow: column;
+}
+
+.galeria div{
+  margin: 2%;
+  text-align: center;
+}
+
+.galeria div img{
+  width: 80%;
+}
+
+.galeria div:nth-child(1){
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.galeria div:nth-child(3){
+  -webkit-filter: sepia(90%);
+  filter: blur(90%);
+}
+
+.galeria div:nth-child(even){
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 
 
 footer{
+  text-align: center;
   border-radius: 0 0 10px 10px;
   background-color: #C6d5c5;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
 }
 
 footer section{
@@ -91,13 +133,29 @@ footer section{
     width: 900px;
     text-align: center;
   }*/
-  /*
-  #imagenes_secundarias{
-    flex-direction: column;
+
+  #imagen1, #imagen2, #imagen3{
+    margin: auto;
   }
-  */
+
+  #imagenes_secundarias{
+    flex-flow: row;
+  }
+
+  .galeria{
+    flex-flow: row wrap;
+  }
+
+  .galeria div{
+    flex: 1 2 25%;
+  }
+
 
   footer{
-    flex-direction: row;
+    flex-flow: row;
+  }
+
+  footer section{
+    margin: auto;
   }
 }
